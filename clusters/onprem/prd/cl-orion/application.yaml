@@ -10,7 +10,7 @@ spec:
     targetRevision: v1.2.3
     path: overlays/onprem/prd/cl-orion
   destination:
-    url: https://kubernetes.default.svc
+    server: https://kubernetes.default.svc
     namespace: urp-prd
   syncPolicy:
     automated:
