@@ -6,7 +6,7 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: https://git.example.com/platform/pns-urp.git
+    repoURL: https://github.com/adilosch/pns-urp.git
     targetRevision: main
     path: clusters/onprem
   destination:

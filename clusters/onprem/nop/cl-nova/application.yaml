@@ -6,7 +6,7 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: https://git.example.com/platform/user-resources-pipeline.git
+    repoURL: https://github.com/adilosch/user-resources-pipeline.git
     targetRevision: v1.2.3
     path: overlays/onprem/nop/cl-nova
   destination:
