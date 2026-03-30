@@ -10,7 +10,7 @@ spec:
     targetRevision: v1.2.3
     path: overlays/onprem/nop/cl-nova
   destination:
-    name: onprem-cl-nova
+    name: kubernetes.default.svc
     namespace: urp-nop
   syncPolicy:
     automated:
