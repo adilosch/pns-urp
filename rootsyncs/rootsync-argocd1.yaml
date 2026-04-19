@@ -1,0 +1,15 @@
+apiVersion: configsync.gke.io/v1beta1
+kind: RootSync
+metadata:
+  name: bootstrap-argocd1
+  namespace: config-management-system
+spec:
+  sourceFormat: unstructured
+  git:
+    repo: https://github.com/adilosch/pns-urp.git
+    branch: main
+    dir: bootstrap/overlays/argocd1
+    auth: none
+    period: 15s
+  override:
+    enableShellInRendering: true
