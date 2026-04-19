@@ -6,7 +6,7 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: https://bitbucket.myorg.de/scm/platform/user-resources-pipeline.git
+    repoURL: https://github.com/adilosch/user-resources-pipeline.git
     targetRevision: main
     path: argocd/apps               # URP Apps liegen hier
   destination:
