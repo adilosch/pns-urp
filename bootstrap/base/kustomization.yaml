@@ -4,7 +4,6 @@ kind: Kustomization
 labels:
   - includeSelectors: true
     pairs:
-      app.kubernetes.io/part-of: pns-urp-bootstrap
       bootstrap.pns-urp.io/owner: config-sync
 
 resources:
