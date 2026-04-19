@@ -9,7 +9,5 @@ labels:
 
 resources:
   - namespace.yaml
+  - https://raw.githubusercontent.com/argoproj/argo-cd/v2.11.0/manifests/install.yaml
   - app-of-apps.yaml
-
-generators:
-  - argocd-install.yaml

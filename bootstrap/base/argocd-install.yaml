@@ -1,8 +1,0 @@
-# bootstrap/base/kustomization.yaml
-apiVersion: kustomize.config.k8s.io/v1beta1
-kind: Kustomization
-namespace: argocd-base              # Kustomize setzt Namespace auf alle Ressourcen
-resources:
-  - namespace.yaml
-  - https://raw.githubusercontent.com/argoproj/argo-cd/v2.11.0/manifests/install.yaml
-  - app-of-apps.yaml

@@ -4,4 +4,19 @@ namespace: argocd2                  # ← das ist der einzige Unterschied pro Ov
 resources:
   - ../../base
 patches:
-  - path: namespace-patch.yaml
+  - target:
+      kind: Namespace
+      name: argocd-base
+    patch: |-
+      - op: replace
+        path: /metadata/name
+        value: argocd2
+  - target:
+      group: argoproj.io
+      version: v1alpha1
+      kind: Application
+      name: app-of-apps
+    patch: |-
+      - op: replace
+        path: /spec/destination/namespace
+        value: argocd2
