@@ -13,3 +13,5 @@ spec:
     period: 15s
   override:
     enableShellInRendering: true
+  helm:
+    enabled: true               # ← das ist der entscheidende Schalter

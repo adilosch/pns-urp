@@ -1,22 +1,7 @@
+# bootstrap/overlays/argocd1/kustomization.yaml
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
-namespace: argocd1                  # ← das ist der einzige Unterschied pro Overlay
+namespace: argocd1              # setzt Namespace auf ALLE Ressourcen automatisch
+
 resources:
   - ../../base
-patches:
-  - target:
-      kind: Namespace
-      name: argocd-base
-    patch: |-
-      - op: replace
-        path: /metadata/name
-        value: argocd1
-  - target:
-      group: argoproj.io
-      version: v1alpha1
-      kind: Application
-      name: app-of-apps
-    patch: |-
-      - op: replace
-        path: /spec/destination/namespace
-        value: argocd1

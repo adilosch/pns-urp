@@ -1,12 +1,23 @@
+# bootstrap/base/kustomization.yaml
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 
-labels:
-  - includeSelectors: true
-    pairs:
-      bootstrap.pns-urp.io/owner: config-sync
-
 resources:
   - namespace.yaml
-  - https://raw.githubusercontent.com/argoproj/argo-cd/v2.11.0/manifests/install.yaml
   - app-of-apps.yaml
+
+helmCharts:
+  - name: argo-cd
+    repo: https://argoproj.github.io/argo-helm
+    version: "7.3.4"
+    releaseName: argocd
+    namespace: argocd-base          # wird per Overlay überschrieben
+    valuesInline:
+      global:
+        domain: argocd.example.com
+      server:
+        service:
+          type: ClusterIP
+      configs:
+        params:
+          server.insecure: true     # für Simulation ohne TLS
