@@ -2,7 +2,7 @@ apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   name: app-of-apps
-  namespace: argocd-base            # wird per Overlay gesetzt
+  namespace: argocd1            # wird per Overlay gesetzt
 spec:
   project: default
   source:
@@ -11,7 +11,7 @@ spec:
     path: argocd/apps               # URP Apps liegen hier
   destination:
     server: https://kubernetes.default.svc
-    namespace: argocd-base
+    namespace: argocd1
   syncPolicy:
     automated:
       prune: true
